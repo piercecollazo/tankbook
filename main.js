@@ -16,9 +16,12 @@ function search(event){
     let input = document.querySelector('#search-input').value;
 
     for(let i = 0; i < data.length; i++){
-        if(data[i].searchTerms.includes(input)){
-            // console.log('found one')
+        for(let a = 0; a < data[i].searchTerms.length; a++){
+            if(data[i].searchTerms[a].includes(input)){
+                // console.log('found one')
             display(i);
+            return
+            }
         }
     }
     

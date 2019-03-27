@@ -19,7 +19,7 @@ const abrams = {
 }
 
 const challenger = {
-    searchTerms: ['FV4034', 'fv4034', 'Challenger', 'challenger', 'Challenger 2', 'challenger 2', 'british', 'British'],
+    searchTerms: ['FV4034', 'fv4034','Challenger 2', 'challenger 2', 'british', 'British'],
     name: 'FV4034 Challenger 2',
     origin: 'United Kingdom',
     weight: 75,
