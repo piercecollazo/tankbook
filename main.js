@@ -9,7 +9,7 @@ function init(){
 
     document.querySelector('#clear-list')
         .addEventListener('click', clearList);
-
+    // This unlocks searching as you type....but be careful what you wish for!
     // document.querySelector('#search-input')
     //     .addEventListener('input', search);
 }
@@ -28,7 +28,7 @@ function search(event){
         }else{
 
             for(let a = 0; a < data[i].searchTerms.length; a++){
-                if(data[i].searchTerms[a].includes(input)){
+                if(data[i].searchTerms[a].includes(input.toLowerCase())){
                     // console.log('found one')
                 display(i);
                 return
