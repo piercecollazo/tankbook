@@ -16,13 +16,23 @@ function search(event){
     let input = document.querySelector('#search-input').value;
 
     for(let i = 0; i < data.length; i++){
-        for(let a = 0; a < data[i].searchTerms.length; a++){
-            if(data[i].searchTerms[a].includes(input)){
-                // console.log('found one')
-            display(i);
+
+        if(i === data.length || input === ''){
+            for(let i = 0; i < fail.length; i++){
+                failList(fail[i]);
+            }
             return
+        }else{
+
+            for(let a = 0; a < data[i].searchTerms.length; a++){
+                if(data[i].searchTerms[a].includes(input)){
+                    // console.log('found one')
+                display(i);
+                return
+                }
             }
         }
+        
     }
     
 }
@@ -78,4 +88,12 @@ function clearList(){
     while(motherList.hasChildNodes){
         motherList.removeChild(motherList.firstChild);
     }
+}
+
+function failList(rule){
+    let motherList = document.querySelector('#list');
+    let newLine = document.createElement('li');
+    newLine.innerText = rule
+    motherList.appendChild(newLine);
+
 }

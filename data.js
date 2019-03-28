@@ -27,6 +27,9 @@ const challenger = {
     speed: 37,
     caliber: 120
 }
-
-
-const data = [armata,abrams,challenger]
+const rule1 = 'No results found';
+const rule2 = 'Searches do not need to be case sensitive';
+const rule3 = 'Please search using tank names or nomenclatures';
+const rule4 = 'Even incomplete words are acceptable!';
+const fail = [rule1, rule2, rule3, rule4];
+const data = [armata,abrams,challenger];
