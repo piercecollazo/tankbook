@@ -9,6 +9,7 @@ function init(){
 
     document.querySelector('#clear-list')
         .addEventListener('click', clearList);
+
     // This unlocks searching as you type....but be careful what you wish for!
     // document.querySelector('#search-input')
     //     .addEventListener('input', search);
@@ -19,7 +20,9 @@ function search(event){
     let input = document.querySelector('#search-input').value;
 
     for(let i = 0; i < data.length; i++){
-
+        // This checks for a matching search term(even a partial match).
+        // If it succeeds to puts up the best match.
+        // if the loop runs through without a match or the input is empty, it posts search rules.
         if(i === data.length || input === ''){
             for(let i = 0; i < fail.length; i++){
                 failList(fail[i]);
@@ -40,13 +43,14 @@ function search(event){
     
 }
 
-
+// The display function gets looped by the search function, and displays every key for every object
 function display(i){
     let motherList = document.querySelector('#list');
     const newList = document.createElement('ul');
         newList.className = 'tank-stats';
     const newLine = document.createElement('li');
 
+    // These are the console checks for making sure data is moving properly
     // console.log('Nomenclature: ' + data[i].name)
     // console.log('Country of Origin: ' + data[i].origin)
     // console.log('Manufacturer: ' + data[i].manufacturer)
@@ -55,6 +59,7 @@ function display(i){
     // console.log('Gun caliber: ' + data[i].caliber + "mm")
     // console.log('')
 
+    // These are the lines embedding under the new unordered list
     let nameLine = document.createElement('li');
         nameLine.innerText = 'Nomenclature: ' + data[i].name;
     let countryLine = document.createElement('li');
@@ -68,6 +73,9 @@ function display(i){
     let gunLine = document.createElement('li');
         gunLine.innerText = 'Gun caliber: ' + data[i].caliber + 'mm';
 
+    // Whenever the function is called, a new line(newLine) is made in the parent(motherList)
+    // The child line(newLine) is then given a child unordered list(newList) of it's own
+    // That list is then populated with the key values(nameLine,countryLine, etc.) of an object
     motherList.appendChild(newLine);
     newLine.appendChild(newList);
     newList.appendChild(nameLine);
