@@ -8,7 +8,10 @@ function init(){
         .addEventListener('click', displayAll);
 
     document.querySelector('#clear-list')
-        .addEventListener('click', clearList)
+        .addEventListener('click', clearList);
+
+    // document.querySelector('#search-input')
+    //     .addEventListener('input', search);
 }
 
 function search(event){
